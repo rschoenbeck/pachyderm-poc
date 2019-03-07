@@ -1,0 +1,7 @@
+env_list
+snowflakesecret.yaml
+.DS_Store
+.gitignore
+.git
+snowflake_download.sh
+result.csv
