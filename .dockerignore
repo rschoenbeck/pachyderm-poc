@@ -1,3 +1,5 @@
+notebooks/
+README.md
 cron.json
 env_list
 snowflakesecret.yaml
