@@ -1,9 +1,9 @@
 {
   "pipeline": {
-    "name": "poc-snowflake-s3"
+    "name": "loan-input"
   },
   "transform": {
-      "image": "rschoenbeck/pach-snowflake-test:latest",
+      "image": "rschoenbeck/pach-ingest:latest",
       "cmd": [ "/bin/bash" ],
       "stdin": [
         "export SNOWSQL_USER=$(cat /tmp/snowflakesecret/username)",
@@ -13,7 +13,7 @@
         "export SNOWSQL_ACCOUNT=$(cat /tmp/snowflakesecret/account)",
         "export SNOWSQL_HOST=$(cat /tmp/snowflakesecret/host)",
         "export SNOWSQL_SCHEMA=RAW_DATA",
-        "/snow/snowsql -f query_file.sql -o output_file=/pfs/out/result.csv -o quiet=true -o output_format=csv -o friendly=false"
+        "/snow/snowsql -f query_file.sql -o output_file=/pfs/out/loan_data.csv -o quiet=true -o output_format=csv -o friendly=false"
       ],
      "secrets": [{
         "name": "snowflakesecret",
@@ -23,10 +23,7 @@
   "input": {
     "cron": {
       "name": "tick",
-      "spec": "@every 15m"
+      "spec": "@every 3m"
     }
-  },
-  "egress": {
-    "URL": "s3://robs-pachyderm-test-files/"
   }
 }

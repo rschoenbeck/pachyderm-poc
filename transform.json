@@ -1,0 +1,20 @@
+{
+  "pipeline": {
+    "name": "loan-transform"
+  },
+  "transform": {
+      "image": "rschoenbeck/pach-transform:latest",
+      "cmd": [ "python", "loan_transform.py" ],
+      "debug": true
+  },
+  "input": {
+    "pfs": {
+      "repo": "loan-input",
+      "glob": "/"
+    }
+  },
+  "enable_stats": true,
+  "egress": {
+    "URL": "s3://robs-pachyderm-test-files/"
+  }
+}

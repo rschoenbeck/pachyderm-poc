@@ -1,7 +1,8 @@
 .DS_Store
 snowflakesecret.yaml
 env_list
-result.csv
+*.csv
+docker-transform/env/
 
 # Created by https://www.gitignore.io/api/python
 # Edit at https://www.gitignore.io/?templates=python

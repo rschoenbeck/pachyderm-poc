@@ -1,0 +1,9 @@
+README.md
+env_list
+.DS_Store
+.gitignore
+.git
+env/
+loan_data.csv
+reduced.csv
+loan_data_reduced.csv
