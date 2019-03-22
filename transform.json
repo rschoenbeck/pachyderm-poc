@@ -15,6 +15,6 @@
   },
   "enable_stats": true,
   "egress": {
-    "URL": "s3://robs-pachyderm-test-files/"
+    "URL": "s3://pachyderm-data-export/"
   }
 }

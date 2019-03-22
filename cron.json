@@ -23,7 +23,7 @@
   "input": {
     "cron": {
       "name": "tick",
-      "spec": "@every 3m"
+      "spec": "@every 5m"
     }
   }
 }
